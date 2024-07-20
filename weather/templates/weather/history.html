@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История запросов</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>История запросов</h1>
+        <ul>
+            {% for entry in history %}
+            <li>{{ entry.city }} - {{ entry.search_count }} запросов</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'index' %}">Назад</a>
+    </div>
+</body>
+</html>
